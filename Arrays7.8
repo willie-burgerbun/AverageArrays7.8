@@ -1,0 +1,30 @@
+//program that prompts the user to enter ten double //values, invokes this method, and displays the average //value.
+import java.util.Scanner;
+public class Main {
+
+  public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+      double[] values = new double[10];//declare array of 10  
+      System.out.println("Enter ten double values:");//prompt the user to enter 10 numbers
+      for (int i = 0; i < values.length; i++) {//For loop to allow number of entries per the length of the array.
+          values[i] = scanner.nextDouble();
+      }
+      double avg = average(values);//call average function and display results
+      System.out.println("The average is: " + avg);
+      scanner.close();
+  }
+  public static int average(int[] array) {//average function to sum the total of all numbers entered and div. by array length
+      int sum = 0;
+      for (int value : array) {
+          sum += value;
+      }
+      return array.length > 0 ? sum / array.length : 0;
+  }
+  public static double average(double[] array) {
+      double sum = 0;
+      for (double value : array) {
+          sum += value;
+      }
+      return array.length > 0 ? sum / array.length : 0.0;
+  }
+}
